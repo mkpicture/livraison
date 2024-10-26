@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi des Livraisons et Revenus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestion des Livraisons</h1>
+        <p>Enregistrez vos livraisons et consultez vos revenus journaliers facilement.</p>
+
+        <!-- Formulaire pour ajouter une livraison -->
+        <form id="livraisonForm">
+            <label for="date">Date :</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="client_nom">Nom du Client :</label>
+            <input type="text" id="client_nom" name="client_nom" required>
+
+            <label for="client_telephone">Téléphone du Client :</label>
+            <input type="tel" id="client_telephone" name="client_telephone" required>
+
+            <label for="adresse">Adresse de Livraison :</label>
+            <input type="text" id="adresse" name="adresse" required>
+
+            <label for="montant">Montant :</label>
+            <input type="number" id="montant" name="montant" required>
+
+            <label for="moyen_paiement">Moyen de Paiement :</label>
+            <select id="moyen_paiement" name="moyen_paiement" required>
+                <option value="Espèces">Espèces</option>
+                <option value="Carte Bancaire">Orange Money Chez Izoua</option>
+                <option value="Chèque">Wave Chez Izoua</option>
+                <option value="Chez moi">OM ou Wave chez moi</option>
+            </select>
+
+            <label for="statut">Statut de la Livraison :</label>
+            <select id="statut" name="statut" required>
+                <option value="En cours">En cours</option>
+                <option value="Livrée">Livrée</option>
+            </select>
+
+            <button type="submit" class="btn">Enregistrer la Livraison</button>
+        </form>
+
+        <h2>Revenu Total d'Aujourd'hui</h2>
+        <div id="revenuJournalier" class="revenu">0 €</div>
+
+        <h2>Livraisons du Jour</h2>
+        <table id="livraisonsTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Client</th>
+                    <th>Adresse</th>
+                    <th>Téléphone</th>
+                    <th>Montant</th>
+                    <th>Moyen de Paiement</th>
+                    <th>Statut</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="livraisonsBody">
+                <!-- Les lignes de livraison seront ajoutées ici -->
+            </tbody>
+        </table>
+
+        <div id="notification" class="notification">Livraison enregistrée avec succès !</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
